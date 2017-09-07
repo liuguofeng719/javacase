@@ -11,6 +11,7 @@
     <modules>
         <module>case-basis</module>
         <module>case-hadoop</module>
+        <module>cases-cala</module>
     </modules>
     <properties>
         <cglib.version>3.2.5</cglib.version>
