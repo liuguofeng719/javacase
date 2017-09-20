@@ -11,7 +11,7 @@ package com.scala.demo
   **/
 
 // 上边界 scala 限定操作符 T <: A 如果在类限定，T 只能是A的子类或者A本身 和java 里面的 <? extends T> 限定符一样
-// 下边界限定符 T >: A T 要么是 A 要么就是A的父类和A的子类， 和java <? super T> 有些不同，java 只能是自己或者T的子类
+// 下边界限定符 T >: A T 要么是 A 要么就是A的父类，和java <? super T> 限定符一样
 // View Binds 是上边界和下边界补充版 操作符 <%  例如：T <% Writable 但是T必须Writable 类型的，但是T 没有继承 Writable 这个时候必须通过隐式转换 implicit 关键字
 // RDD[T: ClassTag]  T: ClassTag 是通过jvm运行期才能确定的类型，因为Spark 运行和编程区分Driver和Excutor 只有在运行期才能知道完整的信息
 // 逆变和协变: -T 和 +T 逆变：子类能去的，父类也能去，协变：父类能去的，子类也能去
@@ -38,6 +38,7 @@ class Person(val name: String) {
 class Worker(name: String) extends Person(name)
 
 class Swing(name: String) extends Worker(name)
+class Swing1(name: String) extends Swing(name)
 
 class Computer[T <: Person](p1: T, p2: T) {
   def cp = p1.talk(p2)

@@ -15,18 +15,18 @@ object FunctionProgramingAdvanced {
 
     //把函数赋值给变量
     val f = hiBigData _
-    f("Spark");
+    f("Spark","武侯区");
 
     //匿名函数
     val b = (name: String) => println("hello=" + name);
     b("hello")
 
     //函数当着参数传递
-    def getName(func: (String) => Unit, name: String): Unit = {
-      func(name);
+    def getName(func: (String,String) => Unit, name: String,addr:String): Unit = {
+      func(name,addr);
     }
 
-    getName(f, "zhangsan");
+    getName(f, "zhangsan","武侯区");
 
     //函数当着返回值
     def getString = (name: String) => println(name);
@@ -41,7 +41,7 @@ object FunctionProgramingAdvanced {
 
   }
 
-  def hiBigData(name: String): Unit = {
+  def hiBigData(name: String,addr:String): Unit = {
     println("Hi: " + name)
   }
 
