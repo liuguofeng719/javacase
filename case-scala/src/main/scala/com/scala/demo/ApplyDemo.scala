@@ -119,6 +119,9 @@ class ConcreteLogger extends Loging with Cloneable {
 
   def increment(x: Int)(y: Int) = x * y
 }
+
+case class Order(orderId: String, orderTotal: Long)
+
 //提取器
 object Email {
   //组合对象
@@ -137,6 +140,10 @@ object Email {
     println(option.get._1)
     println(option.get._2)
 
+    val order = Order("20170920", 2020L)
+
+    val Order(ss, dd) = order
+    println(ss + "==" + dd)
   }
 }
 

@@ -11,12 +11,13 @@
     <modules>
         <module>case-basis</module>
         <module>case-hadoop</module>
-        <module>cases-cala</module>
+        <module>case-scala</module>
+        <module>case-scala-spark</module>
     </modules>
     <properties>
         <cglib.version>3.2.5</cglib.version>
         <junit.version>4.10</junit.version>
-        <hadoop.version>2.8.1</hadoop.version>
+        <hadoop.version>2.7.4</hadoop.version>
         <spark.version>2.1.1</spark.version>
         <mysql.version>5.1.18</mysql.version>
     </properties>

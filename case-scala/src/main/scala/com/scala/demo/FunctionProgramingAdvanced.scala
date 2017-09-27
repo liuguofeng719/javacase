@@ -45,6 +45,7 @@ object FunctionProgramingAdvanced {
     println("Hi: " + name)
   }
 
+  def funVar = 12;
 
   //  def hiBigData(name: String, age: Int): Unit = {
   //    println("Hi: " + name)

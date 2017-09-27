@@ -14,7 +14,7 @@ class PersonType {
 //    println("PersonType=" + name);
 //    this
 //  }
-  def sayHello2(name: String)= {
+  def sayHello2(name: String): this.type = {
     println("PersonType=" + name);
     this
   }

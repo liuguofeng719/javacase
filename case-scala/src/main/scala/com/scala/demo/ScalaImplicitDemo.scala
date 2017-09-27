@@ -63,7 +63,6 @@ object ScalaImplicitDemo {
   def main(args: Array[String]): Unit = {
 
     //导入隐式对象
-    import com.scala.demo.implicits._
 
     // Main 对象里面没有sayHello 方法，通过隐式转换，Main 对象里面有了 sayHello
     val main = new Main("Scala");
@@ -104,7 +103,7 @@ object Hello {
 
 object Animal {
   def main(args: Array[String]): Unit = {
-    import com.scala.demo.Hello._;
+    ;
 
     println("test".incrment)
   }
