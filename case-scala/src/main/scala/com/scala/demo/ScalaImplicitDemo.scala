@@ -25,7 +25,7 @@ class Main(var name: String) {}
 
 object Main {
   //隐式转换 方法
-  //  implicit def man2SuperMain(main: Main) = new SuperMain(main.name);
+    implicit def man2SuperMain(main: Main) = new SuperMain(main.name);
 }
 
 class SuperMain(val name: String) {
@@ -74,10 +74,9 @@ object ScalaImplicitDemo {
     talk("Scala");
     //方法参数隐私转换
     foo("zhansan")
-    foo(20)
+//    foo(20)
 
     val file = new File(".")
-    file.show
 
   }
 
@@ -103,9 +102,7 @@ object Hello {
 
 object Animal {
   def main(args: Array[String]): Unit = {
-    ;
-
-    println("test".incrment)
+    println("test")
   }
 }
 

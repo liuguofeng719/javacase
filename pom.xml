@@ -13,6 +13,8 @@
         <module>case-hadoop</module>
         <module>case-scala</module>
         <module>case-scala-spark</module>
+        <module>case-spring-boot</module>
+        <module>case-rocketmq</module>
     </modules>
     <properties>
         <cglib.version>3.2.5</cglib.version>
@@ -76,6 +78,13 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
+            </dependency>
+            <!-- cvs 操作-->
+            <dependency>
+                <groupId>com.univocity</groupId>
+                <artifactId>univocity-parsers</artifactId>
+                <version>2.6.3</version>
+                <type>jar</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
