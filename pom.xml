@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>case-basis</module>
+        <module>case-boot</module>
         <module>case-hadoop</module>
         <module>case-scala</module>
         <module>case-scala-spark</module>
