@@ -16,6 +16,8 @@
         <module>case-scala-spark</module>
         <module>case-spring-boot</module>
         <module>case-rocketmq</module>
+        <module>case-cache</module>
+        <module>case-kafka</module>
     </modules>
     <properties>
         <cglib.version>3.2.5</cglib.version>

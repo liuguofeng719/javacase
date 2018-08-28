@@ -1,0 +1,14 @@
+$(function(){
+    $("#exception").bind("click",function(){
+        $.ajax({
+           url:"/testError",
+           dataType:"json",
+           success:function(data){
+                console("success",data);
+           },
+           error:function(data){
+                console.log("error",data)
+           }
+        });
+    });
+});

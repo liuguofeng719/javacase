@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,9 +26,10 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        for (final ProductInventory productInventory : inventoryService.getProductInventory()) {
-            System.out.println(productInventory);
-        }
+//        for (final ProductInventory productInventory : inventoryService.getProductInventory()) {
+//            System.out.println(productInventory);
+//        }
+        System.out.println(inventoryService.getProductInventory());
         model.addAttribute("userName", "张三2");
         return "index";
     }
@@ -40,9 +40,13 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/testError")
+    public void error() {
+       int i = 1 / 0;
+    }
+
 
     @RequestMapping("/add")
-    @ResponseBody
     public void add() {
         ProductInventory productInventory = new ProductInventory();
         productInventory.setProductId(2);

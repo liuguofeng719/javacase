@@ -15,7 +15,9 @@ import java.util.List;
  *
  * @author lgfcxx
  * @version 1.0
- * @desc 1、不同group 相同的topic，能收到消息 2、相同group，相同topic，只有一个收到 2、相同的group，负载效果
+ * @desc 1、不同group 相同的topic，能收到消息
+ * 2、相同group，相同topic，只有一个收到
+ * 2、相同的group，负载效果
  * @createtime 2018/4/10 下午6:39
  * @see jdk 1.7
  **/

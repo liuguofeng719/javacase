@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cache.mapper.ProductInventoryMapper">
+    <resultMap id="productInventory" type="ProductInventory">
+        <result column="product_id" javaType="Integer" property="productId"/>
+        <result column="inventory_cnt" javaType="Integer" property="inventoryCnt"/>
+    </resultMap>
+    <select id="getProductInventory" resultMap="productInventory">
+        select * from product_inventory
+    </select>
+    <select id="getProductById" resultMap="productInventory" parameterType="Integer">
+        select * from product_inventory where product_id=#{pid}
+    </select>
+
+    <insert id="add">
+        insert into product_inventory(product_id,inventory_cnt) values
+         <foreach item="item" collection="list" separator=",">
+            (#{item.productId},#{item.inventoryCnt})
+         </foreach>
+    </insert>
+</mapper>
