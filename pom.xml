@@ -18,6 +18,7 @@
         <module>case-rocketmq</module>
         <module>case-cache</module>
         <module>case-kafka</module>
+        <module>case-webmagic</module>
     </modules>
     <properties>
         <cglib.version>3.2.5</cglib.version>

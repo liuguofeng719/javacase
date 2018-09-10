@@ -1,6 +1,5 @@
 package com.example.cache.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.example.cache.domain.ProductInfo;
 import com.example.cache.domain.ShopInfo;
 import com.example.cache.rebuildcache.ReBuildCacheQueue;
@@ -11,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -50,8 +51,17 @@ public class CacheController {
         }
         //查询数据库,重建缓存，暂时不实现
         final ReBuildCacheQueue<ProductInfo> instance = ReBuildCacheQueue.getInstance();
-        String productInfoJSON = "{\"id\": "+productId+", \"name\": \"iphone7手机\", \"price\": 5599, \"pictureList\":\"a.jpg,b.jpg\", \"specification\": \"iphone7的规格\", \"service\": \"iphone7的售后服务\", \"color\": \"红色,白色,黑色\", \"size\": \"5.5\", \"shopId\": 1, \"modifiedTime\": \"2018-08-28 12:01:00\"}";
-        productInfo = JSON.parseObject(productInfoJSON, ProductInfo.class);
+
+        productInfo.setId(productId);
+        productInfo.setName("iphone7手机");
+        productInfo.setPrice(5599.00);
+        productInfo.setPictureList("a.jpg,b.jpg");
+        productInfo.setSpecification("iphone7的规格");
+        productInfo.setService("iphone7的售后服务");
+        productInfo.setColor("红色,白色,黑色");
+        productInfo.setSize("5.5");
+        productInfo.setShopId(1L);
+        productInfo.setModifiedTime(new Date());
         instance.put(productInfo);
         return productInfo;
     }

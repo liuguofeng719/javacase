@@ -1,7 +1,5 @@
 package com.example.cache.domain;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -25,8 +23,6 @@ public class ProductInfo implements Serializable {
     private String color;
     private String size;
     private Long shopId;
-
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date modifiedTime;
 
     public Date getModifiedTime() {
