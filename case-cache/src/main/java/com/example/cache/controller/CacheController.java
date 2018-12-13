@@ -2,6 +2,7 @@ package com.example.cache.controller;
 
 import com.example.cache.domain.ProductInfo;
 import com.example.cache.domain.ShopInfo;
+import com.example.cache.prewarm.CachePrewarmThread;
 import com.example.cache.rebuildcache.ReBuildCacheQueue;
 import com.example.cache.service.ProductInfoService;
 import com.example.cache.service.ShopInfoService;
@@ -49,6 +50,7 @@ public class CacheController {
             System.out.println("=============获取LocalCache中的Product缓存：" + productInfo);
             return productInfo;
         }
+
         //查询数据库,重建缓存，暂时不实现
         final ReBuildCacheQueue<ProductInfo> instance = ReBuildCacheQueue.getInstance();
 
@@ -84,5 +86,11 @@ public class CacheController {
 
         //查询数据库,重建缓存，暂时不实现
         return null;
+    }
+
+    @RequestMapping("/prewarmCache.do")
+    @ResponseBody
+    public void preWarm(){
+        new Thread(new CachePrewarmThread()).start();
     }
 }

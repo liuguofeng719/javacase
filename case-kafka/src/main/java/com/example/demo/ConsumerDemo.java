@@ -22,7 +22,7 @@ import java.util.Properties;
 public class ConsumerDemo {
 
     private static final Logger logger = LoggerFactory.getLogger(ConsumerDemo.class);
-    private static final String topic = "kafkaTopic";
+    private static final String topic = "access-log";
 
     public static void main(String[] args) {
 

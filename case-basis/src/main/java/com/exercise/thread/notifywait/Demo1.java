@@ -59,7 +59,5 @@ public class Demo1 {
                 }
             }
         }).start();
-
-
     }
 }

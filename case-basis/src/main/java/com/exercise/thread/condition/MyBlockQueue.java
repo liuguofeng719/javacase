@@ -56,7 +56,7 @@ public class MyBlockQueue<T> {
         }
     }
 
-    public T remove() {
+    public T get() {
         lock.lock();
         try {
             while (0 == size) {
@@ -107,7 +107,7 @@ public class MyBlockQueue<T> {
             @Override
             public void run() {
                 while (true) {
-                    System.out.println(myBlockQueue.remove());
+                    System.out.println(myBlockQueue.get());
                 }
             }
         }).start();

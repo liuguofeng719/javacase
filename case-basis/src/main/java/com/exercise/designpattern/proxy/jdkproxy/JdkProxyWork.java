@@ -22,7 +22,8 @@ public class JdkProxyWork implements InvocationHandler {
     }
 
     public <T> T getInstance() {
-        return (T) Proxy.newProxyInstance(this.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
+        return (T) Proxy.newProxyInstance(this.getClass().getClassLoader(),
+                target.getClass().getInterfaces(), this);
     }
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

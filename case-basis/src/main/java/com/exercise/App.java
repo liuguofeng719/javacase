@@ -5,6 +5,10 @@ import com.exercise.designpattern.decorator.ComponetCoffee;
 import com.exercise.designpattern.decorator.MilkDecorator;
 import com.exercise.designpattern.decorator.SugarDecorator;
 
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 /**
  * Hello world!
  */
@@ -16,6 +20,10 @@ public class App {
         ComponetCoffee sugarDecorator = new SugarDecorator(milkDecorator);
         sugarDecorator.showConffee();
         System.out.println(milkDecorator.coffeePrice());
+
+        Workbook newWorkBook2007 = new XSSFWorkbook();
+        final Sheet sheet1 = newWorkBook2007.createSheet("sheet1");
+
 
     }
 }

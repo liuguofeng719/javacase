@@ -1,5 +1,8 @@
 package com.example.demo.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -9,7 +12,10 @@ package com.example.demo.domain;
  * @createtime 2018/5/22 上午10:29
  * @see jdk 1.7
  **/
+@ApiModel(value="user对象",description="用户对象user")
 public class UserVo {
+
+    @ApiModelProperty(name = "用户ID",value = "用户编码",required = true,dataType = "String")
     private String uid;
     private String userName;
     private String pwd;

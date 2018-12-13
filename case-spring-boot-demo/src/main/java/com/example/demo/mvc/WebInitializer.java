@@ -27,7 +27,8 @@ public class WebInitializer implements WebApplicationInitializer {
         context.register(MyMvcConfig.class);
         context.setServletContext(servletContext);
         //注册Spring mvc DispatcherServlet
-        final ServletRegistration.Dynamic servlet = servletContext.addServlet("dispather", new DispatcherServlet(context));
+        final ServletRegistration.Dynamic servlet =
+                servletContext.addServlet("dispather", new DispatcherServlet(context));
         servlet.addMapping("/");
         servlet.setLoadOnStartup(1);
     }
