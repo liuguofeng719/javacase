@@ -11,7 +11,9 @@ import java.util.List;
  * @desc
  * @createtime 2017/9/5 下午3:21
  * @see jdk 1.7
+ *  -Xss1m 代表栈的深度
  *  -verbose:gc  -Xms64M -Xmx64M -XX:MaxDirectMemorySize=5M -Xss1M -XX:+PrintGCDetails
+ *  -verbose:gc -Xms64M -Xmx64M -XX:MaxDirectMemorySize=5M -Xss1M -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError
  *
  **/
 class Person {

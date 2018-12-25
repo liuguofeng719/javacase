@@ -5,7 +5,7 @@ package com.exercise.jvm;
  *
  * @author lgfcxx
  * @version 1.0
- * @desc
+ * @desc -verbose:gc  -Xms64M -Xmx64M -XX:MaxDirectMemorySize=5M -Xss1M -XX:+PrintGCDetails
  * @createtime 2017/9/5 下午4:04
  * @see jdk 1.7
  **/

@@ -143,25 +143,25 @@ public class MyLinkedList<T> implements List<T> {
      *
      * head = first
      * tmpNode = null
-     * prev = first
-     * next = prev.next
-     * while( prev !=null){ 1,2,3,4,5
-     *     Node next = prev.next; 2，3，4,5
-     *     if(next == null){
-     *         head = prev;
+     * goBack = first
+     * goForward = goBack.goForward
+     * while( goBack !=null){ 1,2,3,4,5
+     *     Node goForward = goBack.goForward; 2，3，4,5
+     *     if(goForward == null){
+     *         head = goBack;
      *     }
      *     1,2 = null
      *     2,2,1
      *     3,3,2,1
      *     4,4,3,2,1
-     *     prev.next = tmpNode;
+     *     goBack.goForward = tmpNode;
      *     1,1
      *     2,2,1
      *     3,3,2,1
      *     4,4,3,2,1
-     *     tmpNode = prev;
+     *     tmpNode = goBack;
      *     2，3,4,5
-     *     prev = next;
+     *     goBack = goForward;
      * }
      */
     @Override
@@ -414,7 +414,7 @@ class NodeX<T> {
     public String toString() {
         return "NodeX{" +
                 "data=" + data +
-                ", next=" + next +
+                ", goForward=" + next +
                 '}';
     }
 }

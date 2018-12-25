@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * @author lgfcxx
  * @version 1.0
- * @desc
+ * @desc -verbose:gc -XX:PermSize=10M -XX:PermSize=10M
  * @createtime 2017/9/5 下午4:11
  * @see jdk 1.7
  **/

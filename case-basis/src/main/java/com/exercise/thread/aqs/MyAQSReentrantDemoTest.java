@@ -36,13 +36,13 @@ public class MyAQSReentrantDemoTest {
     public static void main(String[] args) {
 
         MyAQSReentrantDemoTest m = new MyAQSReentrantDemoTest();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                m.a();
-            }
-        }).start();
-
-
+        for (int i = 0; i <3 ; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    m.a();
+                }
+            }).start();
+        }
     }
 }
