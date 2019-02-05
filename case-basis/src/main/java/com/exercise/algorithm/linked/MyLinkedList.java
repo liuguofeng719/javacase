@@ -1,6 +1,7 @@
 package com.exercise.algorithm.linked;
 
 import java.util.LinkedList;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author guofeng
@@ -348,8 +349,21 @@ public class MyLinkedList<T> implements List<T> {
         System.out.println(last);
 
 
+        System.out.println(tryFinally());;
+
+
 //        testLinkedList();
 //        TestLinked();
+    }
+
+    private static int tryFinally() {
+        ReentrantLock lock = new ReentrantLock();
+        try{
+            lock.lock();
+            return 1;
+        }finally{
+            lock.unlock();
+        }
     }
 
     private static void testLinkedList() {

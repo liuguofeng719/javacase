@@ -12,17 +12,17 @@ package com.exercise.thread.interrupt;
 public class ThreadInterruptMethod {
 
     public static void main(String[] args) {
-//        TargetRun targetRun = new TargetRun();
-//        final Thread thread = new Thread(targetRun);
-//        thread.start();
-//        try {
-//            Thread.sleep(200);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        TargetRun targetRun = new TargetRun();
+        final Thread thread = new Thread(targetRun);
+        thread.start();
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 //        thread.interrupt();
 
-        testStatus();
+//        testStatus();
     }
 
     public static void testStatus() {

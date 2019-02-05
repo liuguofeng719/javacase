@@ -2,9 +2,7 @@ package com.exercise;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -17,7 +15,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class RunTimeDemo {
 
     private CountDownLatch count = new CountDownLatch(5);
+
     CopyOnWriteArrayList<Integer> copy = new CopyOnWriteArrayList<>();
+
     ThreadLocal<Integer> local = new ThreadLocal<Integer>() {
         @Override
         protected Integer initialValue() {
@@ -25,11 +25,16 @@ public class RunTimeDemo {
         }
     };
 
+    ExecutorService executor = Executors.newFixedThreadPool(5);
+
     AtomicInteger atomic = new AtomicInteger();
 
     private void testCountDownLatch() {
         for (int i = 0; i < 5; i++) {
-            new Thread(() -> {
+            /**
+             * 会立即抛出异常
+             */
+            executor.execute(() -> {
                 try {
                     for (int j = 0; j < 3; j++) {
                         local.set(local.get() + 1);
@@ -45,7 +50,51 @@ public class RunTimeDemo {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }).start();
+            });
+            /**
+             * 线程里面出现异常，会捕获异常，在获取的时候会抛异常
+             */
+//            final Future<?> submit = executor.submit(() -> {
+//                try {
+//                    for (int j = 0; j < 3; j++) {
+//                        local.set(local.get() + 1);
+//                        System.out.println(local.get() + "====" + Thread.currentThread().getName());
+//                    }
+//                    copy.add(local.get());
+//                    TimeUnit.MICROSECONDS.sleep(1000);
+//                    final int get = atomic.incrementAndGet();
+//                    if (get % 2 == 0) {
+//                        int i1 = 1 / 0;
+//                    }
+//                    count.countDown();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            });
+//            try {
+//                submit.get();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            } catch (ExecutionException e) {
+//                e.printStackTrace();
+//            }
+//            new Thread(() -> {
+//                try {
+//                    for (int j = 0; j < 3; j++) {
+//                        local.set(local.get() + 1);
+//                        System.out.println(local.get() + "====" + Thread.currentThread().getName());
+//                    }
+//                    copy.add(local.get());
+//                    TimeUnit.MICROSECONDS.sleep(1000);
+//                    final int get = atomic.incrementAndGet();
+//                    if (get % 2 == 0) {
+//                        int i1 = 1 / 0;
+//                    }
+//                    count.countDown();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }).start();
         }
         try {
             count.await();

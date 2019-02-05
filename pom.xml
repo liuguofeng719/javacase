@@ -19,9 +19,9 @@
         <module>case-cache</module>
         <module>case-kafka</module>
         <module>case-webmagic</module>
-        <module>casee-lasticsearch</module>
         <module>case-es</module>
         <module>case-netty</module>
+        <module>guava-test</module>
     </modules>
     <properties>
         <cglib.version>3.2.5</cglib.version>

@@ -1,6 +1,9 @@
 package com.exercise;
 
 
+import com.exercise.packagetest.PackageTest;
+import com.exercise.packagetest.UserInfo;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +30,8 @@ public class CalcTimeMinute {
         int workDays = 5;
         long leaveMinute = total - oneDay * workDays;
         System.out.println("加班时长（分）： " + leaveMinute);
+        PackageTest packageTest = new PackageTest();
+        UserInfo userInfo =  new UserInfo("2");
     }
 
     private static long calcMinutes(String startTime, String endTime) throws ParseException {

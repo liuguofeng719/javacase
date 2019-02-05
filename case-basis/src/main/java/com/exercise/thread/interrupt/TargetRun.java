@@ -15,14 +15,18 @@ public class TargetRun implements Runnable {
     @Override
     public void run() {
         try {
-            while (!Thread.interrupted()) {
+            final boolean interrupted = Thread.interrupted();
+            System.out.println("-----------"+ interrupted);
+            while (!interrupted) {
                 System.out.println("没有调用中断线程操作" + Thread.interrupted());
-                Thread.sleep(1000);
+
+//                Thread.sleep(1000);
             }
             System.out.println(Thread.interrupted());
             System.out.println("Exit normal");
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             System.out.println("线程中断的操作==  " + Thread.interrupted() + " = " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

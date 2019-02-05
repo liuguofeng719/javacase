@@ -1,0 +1,2 @@
+com.guava.test.cache.LocalCacheImpl
+com.guava.test.cache.RemoteCacheImpl
