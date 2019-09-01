@@ -1,0 +1,48 @@
+#debug=true
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+#databases
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spring_boot
+    username: root
+    password: 123456
+# \u9A71\u52A8\u7C7B\u578B\uFF0C\u53EF\u4EE5\u4E0D\u8BBE\u7F6E\uFF0Cspring-boot \u4F1A\u53BB\u5224\u65AD\u6570\u636E\u6E90\u662F\u4EC0\u4E48\u9A71\u52A8\u7C7B\u578B\uFF0C\u5982\u679C\u6CA1\u6709\u53EF\u4EE5\u5F3A\u5236\u8BBE\u7F6E
+    driver-class-name: com.mysql.jdbc.Driver
+# \u6307\u5B9A\u8FDE\u63A5\u6C60\u7C7B\u578B
+    type: org.apache.commons.dbcp2.BasicDataSource
+    dbcp2:
+# \u6700\u5927\u7B49\u5F85\u7EBF\u7A0B\uFF0C\u8BBE\u7F6E\u4E3A0\u8868\u793A\u65E0\u9650\u5236
+      max-idle: 10
+# \u6700\u5927\u6D3B\u52A8\u8FDE\u63A5\u6570
+      max-total: 50
+# \u6700\u5927\u7B49\u5F85\u6BEB\u79D2\u6570\uFF0C\u5355\u4F4Dms
+      max-wait-millis: 10000
+# \u6570\u636E\u5E93\u521D\u59CB\u5316\u8FDE\u63A5\u6570
+      initial-size: 5
+
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.springboot2x.domain
+  type-handlers-package: com.springboot2x.typehandler
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,beans,mappings,env
+  endpoint:
+    shutdown:
+      enabled: true
+logging:
+  level:
+    root: info
+    org:
+      springframework: debug

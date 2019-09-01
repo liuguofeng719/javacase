@@ -1,7 +1,5 @@
 package com.example.storm;
 
-import org.junit.Test;
-
 /**
  * Created with IntelliJ IDEA.
  *
@@ -12,7 +10,6 @@ import org.junit.Test;
  * @see jdk 1.7
  **/
 public class TestTopn {
-    @Test
     public void testTopN() {
 //        final List<Integer> numbers = Lists.newArrayList(1, 3, 8, 2, 6, 4, 7, 5, 9, 0);
 //        final Collector<Integer, ?, List<Integer>> collector = Comparators.greatest(5,

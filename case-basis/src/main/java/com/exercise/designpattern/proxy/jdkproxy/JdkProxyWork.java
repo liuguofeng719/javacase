@@ -45,6 +45,4 @@ public class JdkProxyWork implements InvocationHandler {
     public void afterCoffee() {
         System.out.println("喝咖啡");
     }
-
-
 }

@@ -1,7 +1,12 @@
 package com.springboot2x.controller;
 
+import com.springboot2x.domain.User;
+import com.springboot2x.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author guofeng
@@ -13,8 +18,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping("/index")
     public String index() {
         return "test";
+    }
+
+    @RequestMapping("/user/{id}")
+    @ResponseBody
+    public User getUserId(@PathVariable("id") long id) {
+        return userService.getUserById(id);
     }
 }

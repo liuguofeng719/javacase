@@ -27,7 +27,7 @@ public class HeapOverFlowOutOfMemory {
         int i = 0;
         while (true) {
             personList.add(new Person());
-            System.out.println("Person instance" + i++);
+            System.out.println("User instance" + i++);
         }
     }
 }

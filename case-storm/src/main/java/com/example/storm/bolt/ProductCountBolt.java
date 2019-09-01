@@ -95,8 +95,8 @@ public class ProductCountBolt extends BaseRichBolt {
         @Override
         public void run() {
 
-            List<Map.Entry<Long, Long>> topnProductList = new ArrayList<>();
-            List<Long> productidList = new ArrayList<>();
+            List<Map.Entry<Long, Long>> topnProductList = new ArrayList<Map.Entry<Long, Long>>();
+            List<Long> productidList = new ArrayList<Long>();
 
             while (true) {
 

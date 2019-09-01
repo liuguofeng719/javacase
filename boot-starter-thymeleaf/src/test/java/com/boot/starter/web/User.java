@@ -1,5 +1,9 @@
 package com.boot.starter.web;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
 
 /**
@@ -11,6 +15,9 @@ import java.io.Serializable;
  * @createtime 2018/8/3 上午11:53
  * @see jdk 1.7
  **/
+@Setter
+@Getter
+@ToString
 public class User implements Serializable{
 
     private String name;
@@ -49,4 +56,5 @@ public class User implements Serializable{
     public void setAge(Integer age) {
         this.age = age;
     }
+
 }
