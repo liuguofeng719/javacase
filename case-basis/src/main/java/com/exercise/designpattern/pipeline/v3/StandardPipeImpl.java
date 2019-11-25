@@ -3,6 +3,7 @@ package com.exercise.designpattern.pipeline.v3;
 import com.google.common.collect.Lists;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author guofeng
@@ -45,12 +46,12 @@ public class StandardPipeImpl implements Pipe {
 
     private class StandardContextImpl implements ValveContext {
 
-        int step = 0;
+         AtomicInteger step = new AtomicInteger(0);
 
         @Override
         public void invokeNext() {
-            if (!valves.isEmpty() && step < valves.size()) {
-                valves.get(step++).invoke(standardContext);
+            if (!valves.isEmpty() && step.get() < valves.size()) {
+                valves.get(step.getAndIncrement()).invoke(standardContext);
             } else {
                 basicValve.invoke(standardContext);
             }

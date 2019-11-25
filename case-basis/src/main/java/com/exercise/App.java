@@ -1,9 +1,5 @@
 package com.exercise;
 
-import com.exercise.designpattern.decorator.Coffee;
-import com.exercise.designpattern.decorator.ComponetCoffee;
-import com.exercise.designpattern.decorator.MilkDecorator;
-import com.exercise.designpattern.decorator.SugarDecorator;
 import com.exercise.packagetest.GoodStudent;
 import com.exercise.packagetest.Student;
 import com.exercise.packagetest.UserInfo;
@@ -18,13 +14,13 @@ import java.util.HashMap;
  * Hello world!
  */
 public class App {
+    volatile int j = 0;
+
     public static void main(String[] args) {
 
-        Coffee coffee = new Coffee("德国", 12L);
-        ComponetCoffee milkDecorator = new MilkDecorator(coffee);
-        ComponetCoffee sugarDecorator = new SugarDecorator(milkDecorator);
-        sugarDecorator.showConffee();
-        System.out.println(milkDecorator.coffeePrice());
+        long j = Long.MAX_VALUE;
+        int i = (int)j;
+        System.out.println(i);
 
         Workbook newWorkBook2007 = new XSSFWorkbook();
         final Sheet sheet1 = newWorkBook2007.createSheet("sheet1");

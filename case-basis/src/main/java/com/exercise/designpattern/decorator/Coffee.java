@@ -19,10 +19,12 @@ public class Coffee implements ComponetCoffee {
         this.price = price;
     }
 
+    @Override
     public void showConffee() {
         System.out.println("的" + this.getName() + "咖啡");
     }
 
+    @Override
     public Long coffeePrice() {
         return this.getPrice();
     }

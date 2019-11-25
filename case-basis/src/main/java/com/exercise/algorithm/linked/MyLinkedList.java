@@ -41,7 +41,8 @@ public class MyLinkedList<T> implements List<T> {
              * 1，这里first和last拥有相同的节点的引用
              * 2，不管那个变量修改都会使引用发生改变
              */
-            first = newNode; // 赋值给首节点
+            // 赋值给首节点
+            first = newNode;
         } else {
             // 设置下一个节点，引用对象都要发生改变
             l.next = newNode;
@@ -172,7 +173,8 @@ public class MyLinkedList<T> implements List<T> {
         Node<T> prev = null;
         while (pNode != null) {
             // 获取下一个节点
-            Node pNext = pNode.next;// 2 , 3
+            // 2 , 3
+            Node pNext = pNode.next;
             // 判断是为最后一个节点
             if (pNext == null) {
                 head = pNode;
@@ -180,15 +182,18 @@ public class MyLinkedList<T> implements List<T> {
             /**
              * 1，第1轮为空，下一轮就是上一轮的节点
              */
-            pNode.next = prev;// null ,
+            // null ,
+            pNode.next = prev;
             /**
              * 中间临时节点
              */
-            prev = pNode; // 1
+            // 1
+            prev = pNode;
             /**
              * 下一个节点
              */
-            pNode = pNext; // 2
+            // 2
+            pNode = pNext;
         }
         this.first = head;
     }
@@ -207,8 +212,10 @@ public class MyLinkedList<T> implements List<T> {
         Node<T> prev = null;
 
         for (int i = 0; i < index; i++) {
-            prev = tNode;//上一个节点
-            tNode = tNode.next;//中间节点
+            //上一个节点
+            prev = tNode;
+            //中间节点
+            tNode = tNode.next;
         }
 
         //中间节点的下一个节点
