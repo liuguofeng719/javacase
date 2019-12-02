@@ -1,4 +1,4 @@
-package com.exercise.lock;
+package com.exercise.thread.lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

@@ -1,4 +1,4 @@
-package com.exercise.lock;
+package com.exercise.thread.lock;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,21 +9,13 @@ package com.exercise.lock;
  * @createtime 2018/3/23 下午4:49
  * @see jdk 1.7
  **/
-public class MyReentrantLockDemo {
+public class MyLockDemo {
 
-    MyReentrantLock myLock = new MyReentrantLock();
+    private MyLock myLock = new MyLock();
 
     private int i;
 
     public int lockDemoA() {
-        myLock.lock();
-        int j = i++;
-        lockDemoB();
-        myLock.unlock();
-        return j;
-    }
-
-    public int lockDemoB() {
         myLock.lock();
         int j = i++;
         myLock.unlock();
@@ -32,18 +24,13 @@ public class MyReentrantLockDemo {
 
     public static void main(String[] args) {
 
-        MyReentrantLockDemo myLockDemo = new MyReentrantLockDemo();
+        MyLockDemo myLockDemo = new MyLockDemo();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
                     System.out.println(Thread.currentThread().getName() + " = " + myLockDemo.lockDemoA());
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-
-                    }
                 }
             }
         },"A-1").start();
@@ -52,11 +39,6 @@ public class MyReentrantLockDemo {
             public void run() {
                 while (true) {
                     System.out.println(Thread.currentThread().getName() + " = " + myLockDemo.lockDemoA());
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-
-                    }
                 }
             }
         },"A-2").start();

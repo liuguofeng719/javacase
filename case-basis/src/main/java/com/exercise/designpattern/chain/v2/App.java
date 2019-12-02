@@ -6,6 +6,8 @@ import com.exercise.designpattern.chain.v2.model.RequestInput;
  * @author guofeng
  * @version 1.0
  * @see jdk 1.8
+ *
+ * 模板模式 + filter 模式
  **/
 public class App {
 
