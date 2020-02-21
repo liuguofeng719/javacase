@@ -39,7 +39,7 @@ public class InterruptedDemo {
     /**
      * 调用Object.wait/Thread/sleep/Thread.join 方法，调用中断会抛出异常
      */
-    private static void interruptStateThrowsException() throws Exception{
+    private static void interruptStateThrowsException() throws Exception {
         Thread t3 = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 System.out.println("[" + Thread.currentThread().getName() + "] = " + Thread.currentThread().isInterrupted());
