@@ -33,7 +33,6 @@ public class ThreadPoolDemo {
             System.out.println(Thread.currentThread().getName());
 
         }, 1L,TimeUnit.SECONDS );
-
         final ScheduledFuture<Integer> schedule = executorService.schedule(() -> 1024, 1L, TimeUnit.SECONDS);
         while (!schedule.isDone()) {
 

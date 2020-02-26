@@ -54,6 +54,13 @@ class User {
 
 public class Demo1 {
 
+    /**
+     * Class.forName() 区别 ClassLoader.getSystemClassLoader().loadClass()
+     * Class.forName() 要初始化静态变量或者静态块，会执行链接的过程
+     * loadClass 不会初始化静态变量和静态块，不会执行链接的过程
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         // 第一种方式 所有的实例都是复用一份Class，所以这里的hashCode 相同
         final Class cls1 = User.class;

@@ -37,10 +37,10 @@ import java.lang.reflect.Field;
  * <p>
  *     java 中在用的注解
  *      @Override 重写
-* 		@Deprecated 过时
-* 		@SuppressWarnings 消除警告
-* 		@SafeVarargs 消除安全
-* 		@FunctionalInterface 函数是接口
+ * 		@Deprecated 过时
+ * 		@SuppressWarnings 消除警告
+ * 		@SafeVarargs 消除安全
+ * 		@FunctionalInterface 函数是接口
  * 	</p>
  **/
 public class Demo6 {
@@ -58,9 +58,9 @@ public class Demo6 {
         final Annotation[] declaredAnnotations = aClass.getDeclaredAnnotations();
         for (final Annotation annotation : declaredAnnotations) {
             System.out.println(annotation);
-            if(annotation instanceof CrazyBeeClassDesc){
+            if (annotation instanceof CrazyBeeClassDesc) {
                 System.out.println(((CrazyBeeClassDesc) annotation).value());
-            }else if(annotation instanceof CrazyBeeTableName){
+            } else if (annotation instanceof CrazyBeeTableName) {
                 System.out.println(((CrazyBeeTableName) annotation).value());
             }
         }
@@ -69,11 +69,11 @@ public class Demo6 {
         for (final Field field : fields) {
             final Annotation[] declaredAnnotations1 = field.getDeclaredAnnotations();
             for (final Annotation annotation : declaredAnnotations1) {
-                if(annotation instanceof CrazyBeeTableField){
-                    CrazyBeeTableField  crazyBeeTableField= ((CrazyBeeTableField) (annotation));
+                if (annotation instanceof CrazyBeeTableField) {
+                    CrazyBeeTableField crazyBeeTableField = ((CrazyBeeTableField) (annotation));
                     final String value = crazyBeeTableField.value();
                     final String type = crazyBeeTableField.type();
-                    System.out.println(value + " = "+ type);
+                    System.out.println(value + " = " + type);
                 }
             }
         }
