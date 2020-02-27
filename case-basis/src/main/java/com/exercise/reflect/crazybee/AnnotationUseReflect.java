@@ -43,7 +43,7 @@ import java.lang.reflect.Field;
  * 		@FunctionalInterface 函数是接口
  * 	</p>
  **/
-public class Demo6 {
+public class AnnotationUseReflect {
 
     public static void main(String[] args) throws Exception {
         final Class<?> aClass = Class.forName("com.exercise.reflect.crazybee.UserInfo");

@@ -31,7 +31,7 @@ import java.util.Map;
  * <p>
  * 2、Constructor、Field、Method Api操作
  **/
-public class Demo5 {
+public class UseReflect {
 
     /**
      * 1、getFields 方法只能获取公用的字段
@@ -54,7 +54,7 @@ public class Demo5 {
 
     private static void testGenericParameterTypes() throws ClassNotFoundException, NoSuchMethodException {
         // 获取方法的入参泛型类型
-        final Class aClass = Class.forName("com.exercise.reflect.crazybee.Demo5");
+        final Class aClass = Class.forName("com.exercise.reflect.crazybee.UseReflect");
         final Method show = aClass.getMethod("show", Map.class, int.class, String.class, List.class);
         // 获取入参的参数类型
         final Type[] genericParameterTypes = show.getGenericParameterTypes();

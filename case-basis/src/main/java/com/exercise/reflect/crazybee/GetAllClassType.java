@@ -8,7 +8,7 @@ import java.lang.reflect.Type;
  * @version 1.0
  * @see jdk 1.8
  **/
-public class Demo2 {
+public class GetAllClassType {
     // 有哪些类型有Class对象
     /**
      * 1. 基本数据类型 primitive type

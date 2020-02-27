@@ -52,7 +52,7 @@ class User {
     }
 }
 
-public class Demo1 {
+public class LoadClassWay {
 
     /**
      * Class.forName() 区别 ClassLoader.getSystemClassLoader().loadClass()

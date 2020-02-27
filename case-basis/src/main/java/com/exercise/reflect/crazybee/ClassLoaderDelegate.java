@@ -16,7 +16,7 @@ package com.exercise.reflect.crazybee;
  * 2、双亲委派机制
  * 3、沙箱安全机制
  **/
-public class Demo4 {
+public class ClassLoaderDelegate {
 
     public static void main(String[] args) throws Exception {
 
@@ -26,7 +26,7 @@ public class Demo4 {
         final Class<?> aClass1 = Class.forName("com.sun.java.accessibility.util._AccessibleState");
         System.out.println(aClass1.getClassLoader());
 
-        final Class<?> aClass = Class.forName("com.exercise.reflect.crazybee.Demo4");
+        final Class<?> aClass = Class.forName("com.exercise.reflect.crazybee.ClassLoaderDelegate");
         //sun.misc.Launcher$AppClassLoader@18b4aac2
         System.out.println(aClass.getClassLoader());
         //sun.misc.Launcher$ExtClassLoader@816f27d

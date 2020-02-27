@@ -14,7 +14,7 @@ package com.exercise.reflect.crazybee;
  * 类被动初始化
  * 1、当类访问一个静态域的时候，只有包含的静态域的类才会被初始化，例如：如果是子类调用父类的静态域，子类不会初始化
  * 2、通过数组定义类引用，不会触发该类的初始化
- * 3、引用常量不会导致该类的初始化，因为常量的初始化在链接阶段已经做了
+ * 3、引用常量不会导致该类的初始化，因为常量的初始化在链接阶段已经初始化了
  **/
 class Person {
 
@@ -84,7 +84,7 @@ class Teacher extends Person {
     }
 }
 
-public class Demo3 {
+public class ClassInit {
 
     public static void main(String[] args) throws Exception{
         // new 方式
