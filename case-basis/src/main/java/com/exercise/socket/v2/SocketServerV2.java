@@ -1,6 +1,5 @@
 package com.exercise.socket.v2;
 
-
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.DataInputStream;
@@ -36,7 +35,7 @@ public class SocketServerV2 {
                 byte[] bytes = new byte[length-5];
                 dis.readFully(bytes);
 //                final String utf = dis.readUTF();
-                log.info("数据类型={}，数据长度={},读取的值为{}", aByte,length, new String(bytes));
+//                log.info("数据类型={}，数据长度={},读取的值为{}", aByte,length, new String(bytes));
             }
 
 //            while (true) {
