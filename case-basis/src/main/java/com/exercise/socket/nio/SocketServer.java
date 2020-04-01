@@ -30,9 +30,9 @@ public class SocketServer {
                         while (true) {
                             byte[] bytes = new byte[2];
                             System.out.println("开始等待读取数据");
-                            // 方法阻塞
+                            // 方法阻塞，如果超过2个字节需要读取2次
                             final int read = inputStream.read(bytes);
-                            System.out.println("读取的字节数 = " + read);
+                            System.out.println("每次读取的字节数 = " + read);
                             System.out.println(new String(bytes));
                         }
                     } catch (IOException e) {
