@@ -7,7 +7,7 @@ package com.exercise.reflect.crazybee;
  * 获取Class的4种方式
  **/
 
-class User {
+class UserDemo {
     private int age;
     private String name;
     private String address;
@@ -17,11 +17,11 @@ class User {
     }
     public static int MAX = 100;
 
-    public User() {
+    public UserDemo() {
         System.out.println("=======user======" + MAX);
     }
 
-    public User(int age, String name, String address) {
+    public UserDemo(int age, String name, String address) {
         this.age = age;
         this.name = name;
         this.address = address;
@@ -63,8 +63,8 @@ public class LoadClassWay {
      */
     public static void main(String[] args) throws Exception {
         // 第一种方式 所有的实例都是复用一份Class，所以这里的hashCode 相同
-        final Class cls1 = User.class;
-        final Class cls2 = User.class;
+        final Class cls1 = UserDemo.class;
+        final Class cls2 = UserDemo.class;
         System.out.println(cls1.hashCode());
         System.out.println(cls2.hashCode());
         // 135721597
@@ -72,8 +72,8 @@ public class LoadClassWay {
         System.out.println("User.class =================");
 
         // 第二种方式 包名 + 类名
-        final Class cls3 = Class.forName("com.exercise.reflect.crazybee.User");
-        final Class cls4 = Class.forName("com.exercise.reflect.crazybee.User");
+        final Class cls3 = Class.forName("com.exercise.reflect.crazybee.UserDemo");
+        final Class cls4 = Class.forName("com.exercise.reflect.crazybee.UserDemo");
         System.out.println(cls3.hashCode());
         System.out.println(cls4.hashCode());
         System.out.println("Class.forName =================");
@@ -88,8 +88,8 @@ public class LoadClassWay {
         System.out.println("u1.getClass() =================");
 
         // 第四种方式
-        final Class cls7 = ClassLoader.getSystemClassLoader().loadClass("com.exercise.reflect.crazybee.User");
-        final Class cls8 = ClassLoader.getSystemClassLoader().loadClass("com.exercise.reflect.crazybee.User");
+        final Class cls7 = ClassLoader.getSystemClassLoader().loadClass("com.exercise.reflect.crazybee.UserDemo");
+        final Class cls8 = ClassLoader.getSystemClassLoader().loadClass("com.exercise.reflect.crazybee.UserDemo");
         System.out.println(cls7.hashCode());
         System.out.println(cls8.hashCode());
         System.out.println("loadClass  ============");

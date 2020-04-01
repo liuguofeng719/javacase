@@ -16,7 +16,7 @@ package com.exercise.reflect.crazybee;
  * 2、通过数组定义类引用，不会触发该类的初始化
  * 3、引用常量不会导致该类的初始化，因为常量的初始化在链接阶段已经做了
  **/
-class Person {
+class Person1 {
 
     public static final String OPEN = "open";
     public static String CLOSE = "close";
@@ -25,7 +25,7 @@ class Person {
         System.out.println(" person static ");
     }
 
-    public Person() {
+    public Person1() {
         System.out.println(" Person ");
     }
 
@@ -34,7 +34,7 @@ class Person {
     }
 }
 
-class Student extends Person {
+class Student1 extends Person1 {
 
     public static final String OPEN = "open";
     public static String CLOSE = "close";
@@ -51,7 +51,7 @@ class Student extends Person {
 //    }
 
 
-    public Student(String name, int age) {
+    public Student1(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -73,13 +73,13 @@ class Student extends Person {
     }
 }
 
-class Teacher extends Person {
+class Teacher1 extends Person1 {
 
     static {
         System.out.println(" Teacher static ");
     }
 
-    public Teacher() {
+    public Teacher1() {
         System.out.println(" Teacher" );
     }
 }
@@ -89,7 +89,7 @@ public class Demo3 {
     public static void main(String[] args) throws Exception{
         // new 方式
 //        Person p = new Student();
-//        final Class<?> aClass = Class.forName("com.exercise.reflect.crazybee.Student");
+//        final Class<?> aClass = Class.forName("com.exercise.reflect.crazybee.Student1");
 //        aClass.newInstance();
         // 通过无参构造函数初始化
 //        final Student newInstance = (Student) aClass.getDeclaredConstructor(null).newInstance(null);

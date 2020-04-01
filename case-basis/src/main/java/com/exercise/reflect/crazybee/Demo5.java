@@ -43,7 +43,7 @@ public class Demo5 {
      */
     public static void main(String[] args) throws Exception {
 
-//        final Class aClass = Class.forName("com.exercise.reflect.crazybee.Result");
+//        final Class aClass = Class.forName("com.exercise.reflect.crazybee.Result1");
 //        getFieldMethodConstructorAndDeclaredFieldMethodConstructor(aClass);
 //        System.out.println(""+genericSuperclass.getTypeName());
 //        testGenericSuperClass(aClass)
@@ -182,17 +182,17 @@ public class Demo5 {
     }
 }
 
-class Page<T> {
+class Pages<T> {
     private List<T> data;
     private int totalSize;
     private int pageNo;
     private int pageSize;
 
-    public Page() {
+    public Pages() {
 
     }
 
-    public Page(List<T> data, int pageNo, int pageSize) {
+    public Pages(List<T> data, int pageNo, int pageSize) {
         this.data = data;
         this.pageNo = pageNo;
         this.pageSize = pageSize;
@@ -212,24 +212,24 @@ class Page<T> {
     }
 }
 
-class Result extends Page<User> {
+class Result1 extends Pages<User> {
 
     private int code;
     private boolean success;
     private String message;
     public String stackInfo;
 
-    private Result() {
+    private Result1() {
         testClass();
     }
 
-    public Result(int code, boolean success) {
+    public Result1(int code, boolean success) {
         this.code = code;
         this.success = success;
         testClass();
     }
 
-    public Result(int code, boolean success, String message) {
+    public Result1(int code, boolean success, String message) {
         this.code = code;
         this.success = success;
         this.message = message;
@@ -272,18 +272,18 @@ class Result extends Page<User> {
     }
 }
 
-class Request {
+class Request1 {
     private String fromSystem;
     private String version;
     private Date timestamped;
     private String parameters;
     private String reqId;
 
-    public Request() {
+    public Request1() {
 
     }
 
-    public Request(String fromSystem, String version, Date timestamped, String parameters, String reqId) {
+    public Request1(String fromSystem, String version, Date timestamped, String parameters, String reqId) {
         this.fromSystem = fromSystem;
         this.version = version;
         this.timestamped = timestamped;
