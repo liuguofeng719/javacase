@@ -37,6 +37,14 @@ public class NIOBufferTest {
         System.out.println("获取buffer的值=" + buffer.get());
         System.out.println("获取buffer的内容，mark、position、limit的变化");
         println(buffer);
+
+        System.out.println("改变buffer position ,limi˙t ");
+
+        //索引是从0开始的，所以这position(2)是C
+        // position>=limit java.nio.BufferUnderflowExceptions
+        buffer.position(2).limit(3);
+        println(buffer);
+        System.out.println(buffer.get());
     }
 
     private static void println(Buffer buffer) {
