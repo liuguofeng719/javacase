@@ -45,6 +45,12 @@ public class NIOBufferTest {
         buffer.position(2).limit(3);
         println(buffer);
         System.out.println(buffer.get());
+
+        // 使用包裹buffer,不能使用flip函数，因为初始化的时候position为0、limit和capacity的大小就是字节的大小
+        ByteBuffer byteBuffer = ByteBuffer.wrap("ABC".getBytes());
+        while (byteBuffer.hasRemaining()) {
+            System.out.println("====" + byteBuffer.get());
+        }
     }
 
     private static void println(Buffer buffer) {

@@ -9,7 +9,7 @@ import java.nio.channels.FileChannel;
  * @version 1.0
  * @see jdk 1.8
  **/
-public class NIOChannelMappedByteBuffer {
+public class NIOMappedByteBuffer {
 
     public static void main(String[] args) throws Exception {
 
