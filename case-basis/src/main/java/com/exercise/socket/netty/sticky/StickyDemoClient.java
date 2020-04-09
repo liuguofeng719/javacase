@@ -1,6 +1,7 @@
-package com.exercise.socket.netty.basic;
+package com.exercise.socket.netty.sticky;
 
 import io.netty.bootstrap.Bootstrap;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -8,8 +9,9 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 
-public class EchoClient {
+public class StickyDemoClient {
 
     public static void main(String[] args) throws Exception {
         int port = 8080;
@@ -17,9 +19,9 @@ public class EchoClient {
             try {
                 port = Integer.valueOf(args[0]);
             } catch (NumberFormatException e) {
-             }
+            }
         }
-        new EchoClient().connect(port, "127.0.0.1");
+        new StickyDemoClient().connect(port, "127.0.0.1");
     }
 
     public void connect(int port, String host) throws Exception {
@@ -32,7 +34,14 @@ public class EchoClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new EchoClientHandler());
+                            //ch.pipeline().addLast("framer", new FixedLengthFrameDecoder(139));
+                            // ch.pipeline().addLast("framer", new StickyDemoDecodeHandlerV2(
+                            //		 Unpooled.wrappedBuffer(new byte[] { '#' })));
+                            ch.pipeline().addLast("framer", new DelimiterBasedFrameDecoder(8192,
+                                    Unpooled.wrappedBuffer(new byte[]{'#'})));
+
+                            ch.pipeline().addLast(new StickyDemoClientHandler());
+
                         }
                     });
 

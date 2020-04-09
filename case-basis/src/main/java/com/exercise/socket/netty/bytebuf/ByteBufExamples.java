@@ -25,7 +25,6 @@ public class ByteBufExamples {
     	byteBufComposite();
     	directBuffer();
     	heapBuffer();
-    	   
     }
     
     public static void byteBufSetGet() {
@@ -54,8 +53,6 @@ public class ByteBufExamples {
         
         buf.readByte();
         System.out.println("readerIndex = " + buf.readerIndex() + "; writerIndex = " + buf.writerIndex());
-
-
     }
     
     public static void writeAndRead() {
@@ -76,6 +73,7 @@ public class ByteBufExamples {
         ByteBuf buffer = Unpooled.copiedBuffer("Netty\r in Action rocks! ", utf8);
         int index = buffer.forEachByte(ByteProcessor.FIND_CR);
     }
+
     public static void byteBufSlice() {
         Charset utf8 = Charset.forName("UTF-8");
         ByteBuf buf = Unpooled.copiedBuffer("Netty in Action rocks!", utf8);

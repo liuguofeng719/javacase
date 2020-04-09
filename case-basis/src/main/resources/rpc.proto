@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.exercise.socket.netty.rpc;
+
+message RPCRequest {
+  int64  id = 1;
+  string serviceName = 2;
+  string methodName = 3;
+  string parameters = 4;
+  int64 version = 5;
+}
+
+message RPCResponse {
+  int64  id = 1;
+  string serviceName = 2;
+  string methodName = 3;
+  string result = 4;
+  int64 version = 5;
+}
+
+ 
+ 
