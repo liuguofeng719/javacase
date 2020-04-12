@@ -10,14 +10,14 @@ import java.lang.annotation.Target;
 /**
  * @author guofeng
  * @version 1.0
- * @desc
- * @createtime 2019/2/16 8:14 PM
- * @see jdk 1.7
+ * @see jdk 1.8
  **/
 @Inherited
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface NeedTest {
-    boolean value() default true;
+@Target(value = {ElementType.METHOD, ElementType.TYPE})
+public @interface RequestMapping {
+    String value() default "";
+
+    RequestMethod[] method() default RequestMethod.GET;
 }

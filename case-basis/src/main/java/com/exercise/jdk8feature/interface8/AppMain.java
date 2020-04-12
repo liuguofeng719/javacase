@@ -1,4 +1,4 @@
-package com.exercise.interface8;
+package com.exercise.jdk8feature.interface8;
 
 /**
  * @author guofeng

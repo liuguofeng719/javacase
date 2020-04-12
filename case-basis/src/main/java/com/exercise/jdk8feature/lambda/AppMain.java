@@ -1,4 +1,4 @@
-package com.exercise.lambda;
+package com.exercise.jdk8feature.lambda;
 
 import com.google.common.collect.Lists;
 

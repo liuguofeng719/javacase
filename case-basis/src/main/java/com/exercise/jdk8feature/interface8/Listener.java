@@ -1,4 +1,4 @@
-package com.exercise.interface8;
+package com.exercise.jdk8feature.interface8;
 
 /**
  * @author guofeng
@@ -7,8 +7,8 @@ package com.exercise.interface8;
  * @createtime 2019/3/10 10:17 AM
  * @see jdk 1.8
  **/
-public interface Action {
+public interface Listener {
     default void show() {
-        System.out.println("default show()");
+        System.out.println("listener show()");
     }
 }

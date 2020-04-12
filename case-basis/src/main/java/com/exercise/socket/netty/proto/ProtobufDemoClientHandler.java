@@ -1,6 +1,6 @@
 package com.exercise.socket.netty.proto;
 
-import com.turingschool.demo.netty.rpc.RPCRequest;
+import com.exercise.socket.netty.rpc.RPCRequest;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 

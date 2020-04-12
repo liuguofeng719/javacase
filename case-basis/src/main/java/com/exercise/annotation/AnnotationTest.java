@@ -7,6 +7,8 @@ package com.exercise.annotation;
  * @createtime 2019/2/16 8:19 PM
  * @see jdk 1.7
  **/
+//@RequestMapping("/user")
+@PostMapping("/user")
 public class AnnotationTest {
 
     @NeedTest(value = false)
@@ -14,6 +16,7 @@ public class AnnotationTest {
         System.out.println("删除frm" + frmId);
     }
 
+    @PostMapping("/show")
     public void show() {
         System.out.println("ddd");
     }

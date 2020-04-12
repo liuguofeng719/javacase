@@ -1,9 +1,9 @@
 package com.exercise.socket.netty.rpc.v1_1;
 
 
-import com.turingschool.demo.netty.rpc.v1.RpcDecode;
-import com.turingschool.demo.netty.rpc.v1.RpcEncode;
-import com.turingschool.demo.netty.rpc.v1.SerializerFactory;
+import com.exercise.socket.netty.rpc.v1.RpcDecode;
+import com.exercise.socket.netty.rpc.v1.RpcEncode;
+import com.exercise.socket.netty.rpc.v1.SerializerFactory;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;

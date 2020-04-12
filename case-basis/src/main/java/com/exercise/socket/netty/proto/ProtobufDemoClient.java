@@ -1,6 +1,6 @@
 package com.exercise.socket.netty.proto;
 
-import com.turingschool.demo.netty.rpc.RPCResponse;
+import com.exercise.socket.netty.rpc.RPCResponse;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
