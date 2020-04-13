@@ -35,7 +35,7 @@ public class StreamDemo {
         optional.orElseThrow(() -> new ArithmeticException("22"));
 
         System.out.println(optional.orElse(1));
-        // 返回一个指定非null值的Optional。s
+        // 返回一个指定非null值的Optional。
         final Optional<Integer> integer = Optional.of(new Integer(1));
         // 如果存在该值，返回值，否则返回 other。
         System.out.println(integer.orElse(2));
