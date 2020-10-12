@@ -25,7 +25,7 @@
     </modules>
     <properties>
         <cglib.version>3.2.5</cglib.version>
-        <junit.version>4.10</junit.version>
+        <junit.version>4.13.1</junit.version>
         <hadoop.version>2.7.4</hadoop.version>
         <spark.version>2.1.1</spark.version>
         <mysql.version>5.1.18</mysql.version>
